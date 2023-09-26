@@ -5,12 +5,13 @@ import ch.heigvd.dai.Writable;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class BufferedTextFileWriter implements Writable {
     @Override
     public void write(String filename, int sizeInBytes) throws IOException {
         //New FileWriter
-        FileWriter fw = new FileWriter(filename);
+        FileWriter fw = new FileWriter(filename, StandardCharsets.UTF_8);
         BufferedWriter bw = new BufferedWriter(fw);
 
         //Write the file
